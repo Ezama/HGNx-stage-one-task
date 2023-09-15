@@ -1,6 +1,6 @@
 const day = document.getElementById("today");
 const time = document.getElementById("time");
-const currentDate = new Date();
+
 const days = [
   "Sunday",
   "Monday",
@@ -11,5 +11,16 @@ const days = [
   "Saturday",
 ];
 
-day.textContent = days[currentDate.getDay()];
-time.textContent = currentDate.getTime() + " milliseconds";
+function updateTime() {
+  const currentDate = new Date();
+  day.textContent = days[currentDate.getDay()];
+  time.textContent = currentDate.getTime() + " milliseconds";
+}
+
+updateTime();
+
+setInterval(updateTime, 1000);
+
+
+
+
